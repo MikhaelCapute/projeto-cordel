@@ -1,0 +1,115 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap'); /*"Sriracha"*/
+@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap'); /*Passion One*/
+
+:root{
+    --font1: verdana, Geneva, Tahoma, sans-serif;
+    --font2: 'Passion One', cursive;
+    --font3: 'Sriracha', cursive;
+}
+
+*{
+    padding: 0px;
+    margin: 0px;
+    font-size: 1em;
+}
+
+html, body{
+    background-color: darkgrey;
+    min-height: 100vh; /*Tamanho minimo do corpo do meu site será de 100% da minha viewHeight (vw seria para largura, vh é para altura)*/
+    font-family: var(--font1);
+}
+
+header{
+    background-color: black;
+    color: white;
+    text-align: center;
+
+}
+
+header > h1{
+    padding-top: 50px;
+    text-transform: capitalize; /*Text trasnforma é um parametro onde você muda os formatos das letras, sendo assim nesse caso eu estou colocando o inicio de cada palavra em maiúsculo (não está sendo usado)*/
+
+    font-variant: small-caps; /*Aqui eu estou colocando todas as letras em maiúsculo, a diferença é que eu continuo tendo as letras maiúsculas porém eu consigo aumentar o tamanho das primeiras letras de cada palavra*/
+    font-family: var(--font2);
+    font-size: 4em; /*Posso utilizar assim porém se eu diminuir a tela para o tamanho de um celular, o tamanho do h1 não se adapta, logo terei  que usar o vw*/
+    font-size: 10vw; /*Não é a melhor maneira porém quebra um galho, a melhor maneira seria utilizando media queries, mas ainda não aprendemos e vamos aprender lá na frente.*/
+
+    text-shadow: 4px 4px 10px rgba(255, 255, 255, 0.335);
+}
+
+header > p{
+    padding-bottom: 50px; /*Utilizando ficaria 50px para cima no h1 e 50px para baixo no parágrafo, sendo assim deixando o header simetrico*/
+}
+
+a{
+    color: white;
+    text-decoration: none; /*Aqui eu estou retirando o sublinhado do link*/
+    font-weight: bolder;
+    
+}
+
+a:hover, footer > a:hover{ 
+    /*Não precisaria fazer isso pois só temos dois links no nosso projeto, logo o a:hover já bastaria, porém fica aqui de exemplo caso tenhamos um projeto com links no conteúdo, estamos filtrando estas configurações somente para os dois box's.*/
+    
+    text-decoration: underline; /*Aqui eu estou colocando o sublinhado no link quando eu passar o mouse por cima*/
+    text-shadow: 4px 4px 10px rgba(255, 255, 255, 0.425);
+    transition-duration: 0.5s;
+}
+
+section{
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    /*Colocando 10 por cento de viewheight na tela para conseguir fazer o efeito paralax*/
+
+    line-height: 2em; /*Espaçamento de uma linha para outra dentro de um parágrafo*/
+    padding-left: 30px; /*Padding para distanciar os parágrafos da borda a esquerda*/
+    font-family: var(--font3);
+    font-size: 3.5vw;
+}
+
+section.normal{
+    background-color: white;
+    color: black;
+}
+
+section.image{
+    background-color: rgb(51, 51, 51);
+    color: white;
+
+    box-shadow: inset 20px 20px 33px rgba(0, 0, 0, 0.509); /*Colocando a sombra na parte de dentro da imagem para destacar que é uma imagem de FUNDO*/
+
+    background-size: cover; /*Colocando para se ajustar automaticamente na melhor posição da imagem*/
+    background-attachment: fixed; /*Isso faz o efeito paralax*/
+}
+
+section.image > p{
+    background-color: rgba(0, 0, 0, 0.504);
+    text-shadow: 1px 1px 0px black; /*Text shadow para poder visualizar melhor*/
+    text-align: justify;
+    display: inline-block;
+    padding: 50px;
+
+    /*No parágrado dentro da imagem eu defini um background black com uma transparencia minima, defini o tamanho dela em largura e coloquei o padding pra não ficar grudados nas bordas da caixa*/
+}
+
+section#img01{
+    background-image: url('../images/background001.jpg');
+    background-position: right center;
+    
+}
+
+section#img02{
+    background-image: url('../images/background002.jpg');
+
+}
+
+
+footer{
+    background-color: black;
+    text-align: center;
+    color: white;
+    padding: 10px;
+}
